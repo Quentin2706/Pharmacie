@@ -31,7 +31,7 @@ if ($mode == "ajouter")
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Restriction du Produit
             </div>
             <div>
@@ -41,7 +41,7 @@ if ($mode == "ajouter")
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Date de Peremption du Produit
             </div>
             <div>
@@ -51,7 +51,7 @@ if ($mode == "ajouter")
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Prix du Produit
             </div>
             <div>
@@ -61,7 +61,7 @@ if ($mode == "ajouter")
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Quantite du Produit
             </div>
             <div>
@@ -74,45 +74,36 @@ if ($mode == "ajouter")
     
     echo '<div>
     <div class="espace"></div>
-        <select class="libelle marginLight" name="idCategorie" disabled>';
+        <select class="libelle marginLight" name="idCategorie">';
 
-        foreach ( $listeCategorie as $uneCategorie )
+        foreach ( $listeCategories as $uneCategorie )
         {
             $sel = "";
-            if ($uneCategorie->getIdCategorie()== $id->getIdCategorie())
-            {
-                $sel = "selected";
-            }
             echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getNomCategorie().'</option>';
         }
 
         echo '</select>
-    <div class="espace"></div>
+        <div class="espace"></div>
     </div>';
 
     echo '<div>
     <div class="espace"></div>
-        <select class="libelle marginLight" name="idLieuxDeStockage" disabled>';
+        <select class="libelle marginLight" name="idLieuxDeStockage">';
 
-        foreach ( $listeLieuxDeStockage as $unLieuxStockage )
+        foreach ( $listeLieuxDeStockage as $unLieuxDeStockage )
         {
             $sel = "";
-            if ($unLieuxStockage->getIdLieuxDeStockage()== $id->getIdLieuxDeStockage())
-            {
-                $sel = "selected";
-            }
             echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel.'>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
         }
 
         echo '</select>
-    <div class="espace"></div>
+        <div class="espace"></div>
     </div>
 
+    <div>
+        <div class="return marginLight"><a class="centre" href="index.php?page=ListeProduits">Retour</a></div>
+        <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
     </div>
-        <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
-        </div>
 </form>';
 
 } 
@@ -146,7 +137,7 @@ elseif ( $mode == "modifier" )
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Restriction du Produit
             </div>
             <div>
@@ -156,7 +147,7 @@ elseif ( $mode == "modifier" )
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Date de Peremption du Produit
             </div>
             <div>
@@ -166,7 +157,7 @@ elseif ( $mode == "modifier" )
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Prix du Produit
             </div>
             <div>
@@ -176,7 +167,7 @@ elseif ( $mode == "modifier" )
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Quantite du Produit
             </div>
             <div>
@@ -191,7 +182,7 @@ elseif ( $mode == "modifier" )
     <div class="espace"></div>
         <select class="libelle marginLight" name="idCategorie" disabled>';
 
-        foreach ( $listeCategorie as $uneCategorie )
+        foreach ( $listeCategories as $uneCategorie )
         {
             $sel = "";
             if ($uneCategorie->getIdCategorie()== $id->getIdCategorie())
@@ -202,17 +193,17 @@ elseif ( $mode == "modifier" )
         }
 
         echo '</select>
-    <div class="espace"></div>
+        <div class="espace"></div>
     </div>';
 
     echo '<div>
     <div class="espace"></div>
         <select class="libelle marginLight" name="idLieuxDeStockage" disabled>';
 
-        foreach ( $listeLieuxDeStockage as $unLieuxStockage )
+        foreach ( $listeLieuxDeStockage as $unLieuxDeStockage )
         {
             $sel = "";
-            if ($unLieuxStockage->getIdLieuxDeStockage()== $id->getIdLieuxDeStockage())
+            if ($unLieuxDeStockage->getIdLieuxDeStockage()== $id->getIdLieuxDeStockage())
             {
                 $sel = "selected";
             }
@@ -220,13 +211,13 @@ elseif ( $mode == "modifier" )
         }
 
         echo '</select>
-    <div class="espace"></div>
+        <div class="espace"></div>
     </div>
 
     </div>
         <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
+            <div class="return marginLight"><a class="centre" href="index.php?page=ListeProduits">Retour</a></div>
+            <input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/>
         </div>
 </form>';
 }
@@ -260,7 +251,7 @@ elseif ( $mode == "details" )
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Restriction du Produit
             </div>
             <div>
@@ -270,7 +261,7 @@ elseif ( $mode == "details" )
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Date de Peremption du Produit
             </div>
             <div>
@@ -280,7 +271,7 @@ elseif ( $mode == "details" )
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Prix du Produit
             </div>
             <div>
@@ -290,7 +281,7 @@ elseif ( $mode == "details" )
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
+            <div class="titreDescriptif centre">
                 Quantite du Produit
             </div>
             <div>
@@ -305,7 +296,7 @@ elseif ( $mode == "details" )
     <div class="espace"></div>
         <select class="libelle marginLight" name="idCategorie" disabled>';
 
-        foreach ( $listeCategorie as $uneCategorie )
+        foreach ( $listeCategories as $uneCategorie )
         {
             $sel = "";
             if ($uneCategorie->getIdCategorie()== $id->getIdCategorie())
@@ -316,17 +307,17 @@ elseif ( $mode == "details" )
         }
 
         echo '</select>
-    <div class="espace"></div>
+        <div class="espace"></div>
     </div>';
 
     echo '<div>
     <div class="espace"></div>
         <select class="libelle marginLight" name="idLieuxDeStockage" disabled>';
 
-        foreach ( $listeLieuxDeStockage as $unLieuxStockage )
+        foreach ( $listeLieuxDeStockage as $unLieuxDeStockage )
         {
             $sel = "";
-            if ($unLieuxStockage->getIdLieuxDeStockage()== $id->getIdLieuxDeStockage())
+            if ($unLieuxDeStockage->getIdLieuxDeStockage()== $id->getIdLieuxDeStockage())
             {
                 $sel = "selected";
             }
@@ -334,13 +325,12 @@ elseif ( $mode == "details" )
         }
 
         echo '</select>
-    <div class="espace"></div>
+        <div class="espace"></div>
     </div>
 
     </div>
         <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
+            <div class="return marginLight"><a class="centre" href="index.php?page=ListeProduits">Retour</a></div>
         </div>
 </form>';
 }
