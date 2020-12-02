@@ -17,7 +17,7 @@ class Categories
 		return $this->_idCategorie;
 	}
 
-	public function setIdCategorie($idCategorie)
+	public function setIdCategorie(int $idCategorie)
 	{
 		$this->_idCategorie=$idCategorie;
 	}

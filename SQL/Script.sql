@@ -32,9 +32,9 @@ CREATE TABLE Users(
 #------------------------------------------------------------
 DROP TABLE if exists Categories;
 CREATE TABLE Categories(
-        idCategorie         Int  Auto_increment  NOT NULL PRIMARY KEY,
+        idCategorie         Int  Auto_increment  NOT NULL PRIMARY KEY ,
         nomCategorie        Varchar (50) NOT NULL ,
-        ordonnanceCategorie Boolean NOT NULL
+        ordonnanceCategorie Varchar (3) NOT NULL
 )ENGINE=InnoDB;
 
 
