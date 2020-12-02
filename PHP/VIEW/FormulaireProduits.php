@@ -4,7 +4,9 @@ $mode = $_GET["mode"];
 
 if ($mode == "ajouter")
  {
-    $listeProduits=ProduitsManager::getList();
+    $listeCategories=CategoriesManager::getList();
+    $listeLieuxDeStockage=LieuxdestockagesManager::getList();
+
 
     echo '<form method="POST" action="index.php?page=traitementProduits&mode=ajouter">
     <div class="contenu colonne">
@@ -20,52 +22,93 @@ if ($mode == "ajouter")
         </div>
         <div class="colonne marginLight">
             <div class="titreDescriptif centre">
-                Description Produit
+                Description du Produit
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="descriptionProduit" placeholder="Id Visiteur"/>
+                <input class="libelle" type="text" name="descriptionProduit" placeholder="Description du Produit"/>
                 <div class="espace"></div>
             </div>
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Convention
+                Restriction du Produit
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="idConvention" placeholder="Id Convention"/>
+                <input class="libelle" type="text" name="restrictionProduit" placeholder="Restriction du Produit"/>
                 <div class="espace"></div>
             </div>
-        </div>';
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreColonne centre">
+                Date de Peremption du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="dateDePeremption" placeholder="Date de Peremption"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreColonne centre">
+                Prix du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="prixProduit" placeholder="Prix du Produit"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreColonne centre">
+                Quantite du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="quantiteProduit" placeholder="Quantite du Produit"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+    </div>';
+    
+    echo '<div>
+    <div class="espace"></div>
+        <select class="libelle marginLight" name="idCategorie" disabled>';
 
-        echo '<div>
-        <div class="espace"></div>
-            <select class="libelle marginLight" name="idVisiteur" disabled>';
-
-            foreach ( $listeVisiteurs as $uneVisite )
+        foreach ( $listeCategorie as $uneCategorie )
+        {
+            $sel = "";
+            if ($uneCategorie->getIdCategorie()== $id->getIdCategorie())
             {
-                echo '<option value="'.$uneVisite->getIdVisiteur().'"'.$sel.'>'.$uneVisite->getNomVisiteur().' '.$uneVisite->getPrenomVisiteur().'</option>';
+                $sel = "selected";
             }
+            echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getNomCategorie().'</option>';
+        }
 
-            echo '</select>
-        <div class="espace"></div>
-        </div>';
+        echo '</select>
+    <div class="espace"></div>
+    </div>';
 
-        echo '<div>
-        <div class="espace"></div>
-            <select class="libelle marginLight" name="idConvention" disabled>';
+    echo '<div>
+    <div class="espace"></div>
+        <select class="libelle marginLight" name="idLieuxDeStockage" disabled>';
 
-            foreach ( $listeConventions as $uneConvention )
+        foreach ( $listeLieuxDeStockage as $unLieuxStockage )
+        {
+            $sel = "";
+            if ($unLieuxStockage->getIdLieuxDeStockage()== $id->getIdLieuxDeStockage())
             {
-                echo '<option value="'.$uneConvention->getIdConvention().'"'.$sel.'>'.$uneConvention->getNomConvention().'</option>';      
+                $sel = "selected";
             }
+            echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel.'>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
+        }
 
-            echo '</select>
-        <div class="espace"></div>
-        </div>';
+        echo '</select>
+    <div class="espace"></div>
+    </div>
 
-    echo'</div>
+    </div>
         <div>
             <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
             <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
@@ -73,170 +116,231 @@ if ($mode == "ajouter")
 </form>';
 
 } 
-elseif ( $typeFormulaire == "modifier" )
+elseif ( $mode == "modifier" )
 {
     $idRecherche = $_GET['id'];
-    $id = VisiteManager::findById($idRecherche);
-    $listeVisiteurs = VisiteursManager::getList();
-    $listeConventions = ConventionsManager::getList();
+    $id = ProduitsManager::findById($idRecherche);
+    $listeCategories = CategoriesManager::getList();
+    $listeLieuxDeStockage = LieuxdestockagesManager::getList();
 
-    echo '<form method="POST" action="index.php?page=traitementVisite&typeTraitement=modifier">
-
+    echo '<form method="POST" action="index.php?page=traitementProduits&mode=modifier">
     <div class="contenu colonne">
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
-                Date de la visite
+            <div class="titreDescriptif centre">
+                Nom du Produit
             </div>
             <div>
                 <div class="espace"></div>
-                <input type="hidden" name="id" value="'.$id->getIdVisite().'"/>
-                <input class="libelle" type="date" name="dateVisite" value="'.$id->getDateVisite().'"/>
+                <input class="libelle" type="date" name="nomProduit" placeholder="Nom du Produit"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreDescriptif centre">
+                Description du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="descriptionProduit" placeholder="Description du Produit"/>
                 <div class="espace"></div>
             </div>
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Visiteur
+                Restriction du Produit
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="idVisiteur" value="'.$id->getIdVisiteur().'"/>
+                <input class="libelle" type="text" name="restrictionProduit" placeholder="Restriction du Produit"/>
                 <div class="espace"></div>
             </div>
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Convention
+                Date de Peremption du Produit
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="idConvention" value="'.$id->getIdConvention().'"/>
+                <input class="libelle" type="text" name="dateDePeremption" placeholder="Date de Peremption"/>
                 <div class="espace"></div>
             </div>
-        </div>';
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreColonne centre">
+                Prix du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="prixProduit" placeholder="Prix du Produit"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreColonne centre">
+                Quantite du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="quantiteProduit" placeholder="Quantite du Produit"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+    </div>';
+    
+    echo '<div>
+    <div class="espace"></div>
+        <select class="libelle marginLight" name="idCategorie" disabled>';
 
-        echo '<div>
-        <div class="espace"></div>
-            <select class="libelle marginLight" name="idVisiteur" disabled>';
-
-            foreach ( $listeVisiteurs as $uneVisite )
+        foreach ( $listeCategorie as $uneCategorie )
+        {
+            $sel = "";
+            if ($uneCategorie->getIdCategorie()== $id->getIdCategorie())
             {
-                $sel = "";
-                if ($uneVisite->getIdVisiteur()== $id->getIdVisiteur())
-                {
-                    $sel = "selected";
-                }
-                echo '<option value="'.$uneVisite->getIdVisiteur().'"'.$sel.'>'.$uneVisite->getNomVisiteur().' '.$uneVisite->getPrenomVisiteur().'</option>';
+                $sel = "selected";
             }
+            echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getNomCategorie().'</option>';
+        }
 
-            echo '</select>
-        <div class="espace"></div>
-        </div>';
+        echo '</select>
+    <div class="espace"></div>
+    </div>';
 
-        echo '<div>
-        <div class="espace"></div>
-            <select class="libelle marginLight" name="idConvention" disabled>';
+    echo '<div>
+    <div class="espace"></div>
+        <select class="libelle marginLight" name="idLieuxDeStockage" disabled>';
 
-            foreach ( $listeConventions as $uneConvention )
+        foreach ( $listeLieuxDeStockage as $unLieuxStockage )
+        {
+            $sel = "";
+            if ($unLieuxStockage->getIdLieuxDeStockage()== $id->getIdLieuxDeStockage())
             {
-                $sel = "";
-                if ($uneVisite->getIdVisiteur()== $id->getIdVisiteur())
-                {
-                    $sel = "selected";
-                }
-                echo '<option value="'.$uneConvention->getIdConvention().'"'.$sel.'>'.$uneConvention->getNomConvention().'</option>';      
+                $sel = "selected";
             }
+            echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel.'>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
+        }
 
-            echo '</select>
-        <div class="espace"></div>
-        </div>';
+        echo '</select>
+    <div class="espace"></div>
+    </div>
 
-    echo '</div>
+    </div>
         <div>
             <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/>
+            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
         </div>
 </form>';
 }
-elseif ( $typeFormulaire == "details" )
+elseif ( $mode == "details" )
 {
     $idRecherche = $_GET['id'];
-    $id = VisiteManager::findById($idRecherche);
-    $listeVisiteurs = VisiteursManager::getList();
-    $listeConventions = ConventionsManager::getList();
-    echo '<form method="POST" action="index.php>?page=traitementVisite&typeTraitement=details">
+    $id = ProduitsManager::findById($idRecherche);
+    $listeCategories = CategoriesManager::getList();
+    $listeLieuxDeStockage = LieuxdestockagesManager::getList();
 
+    echo '<form method="POST" action="index.php?page=traitementProduits&mode=details">
     <div class="contenu colonne">
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
-                Date de la visite
+            <div class="titreDescriptif centre">
+                Nom du Produit
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="date" name="dateVisite" value="'.$id->getDateVisite().'" disabled/>
+                <input class="libelle" type="date" name="nomProduit" placeholder="Nom du Produit"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreDescriptif centre">
+                Description du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="descriptionProduit" placeholder="Description du Produit"/>
                 <div class="espace"></div>
             </div>
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Visiteur
+                Restriction du Produit
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="idVisiteur" value="'.$id->getIdVisiteur().'" disabled/>
+                <input class="libelle" type="text" name="restrictionProduit" placeholder="Restriction du Produit"/>
                 <div class="espace"></div>
             </div>
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Convention
+                Date de Peremption du Produit
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="idConvention" value="'.$id->getIdConvention().'" disabled/>
+                <input class="libelle" type="text" name="dateDePeremption" placeholder="Date de Peremption"/>
                 <div class="espace"></div>
             </div>
-        </div>';
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreColonne centre">
+                Prix du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="prixProduit" placeholder="Prix du Produit"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreColonne centre">
+                Quantite du Produit
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="quantiteProduit" placeholder="Quantite du Produit"/>
+                <div class="espace"></div>
+            </div>
+        </div>
+    </div>';
+    
+    echo '<div>
+    <div class="espace"></div>
+        <select class="libelle marginLight" name="idCategorie" disabled>';
 
-        echo '<div>
-        <div class="espace"></div>
-            <select class="libelle marginLight" name="idVisiteur" disabled>';
-
-            foreach ( $listeVisiteurs as $uneVisite )
+        foreach ( $listeCategorie as $uneCategorie )
+        {
+            $sel = "";
+            if ($uneCategorie->getIdCategorie()== $id->getIdCategorie())
             {
-                $sel = "";
-                if ($uneVisite->getIdVisiteur()== $id->getIdVisiteur())
-                {
-                    $sel = "selected";
-                }
-                echo '<option value="'.$uneVisite->getIdVisiteur().'"'.$sel.'>'.$uneVisite->getNomVisiteur().' '.$uneVisite->getPrenomVisiteur().'</option>';
+                $sel = "selected";
             }
+            echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getNomCategorie().'</option>';
+        }
 
-            echo '</select>
-        <div class="espace"></div>
-        </div>';
+        echo '</select>
+    <div class="espace"></div>
+    </div>';
 
-        echo '<div>
-        <div class="espace"></div>
-            <select class="libelle marginLight" name="idConvention" disabled>';
+    echo '<div>
+    <div class="espace"></div>
+        <select class="libelle marginLight" name="idLieuxDeStockage" disabled>';
 
-            foreach ( $listeConventions as $uneConvention )
+        foreach ( $listeLieuxDeStockage as $unLieuxStockage )
+        {
+            $sel = "";
+            if ($unLieuxStockage->getIdLieuxDeStockage()== $id->getIdLieuxDeStockage())
             {
-                $sel = "";
-                if ($uneVisite->getIdVisiteur()== $id->getIdVisiteur())
-                {
-                    $sel = "selected";
-                }
-                echo '<option value="'.$uneConvention->getIdConvention().'"'.$sel.'>'.$uneConvention->getNomConvention().'</option>';      
+                $sel = "selected";
             }
+            echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel.'>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
+        }
 
-            echo '</select>
-        <div class="espace"></div>
-        </div>';
+        echo '</select>
+    <div class="espace"></div>
+    </div>
 
-    echo '</div>
+    </div>
         <div>
             <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
+            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
         </div>
 </form>';
 }
