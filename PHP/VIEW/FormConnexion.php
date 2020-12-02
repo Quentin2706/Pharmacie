@@ -1,6 +1,6 @@
 <?php
 
-echo '<form action="index.php?codePage=actionsUtilisateurs&mode=Connexion" method="POST">';
+echo '<form action="index.php?page=actionsUtilisateurs&mode=Connexion" method="POST">';
 
 echo '<div>
 <label for="pseudoUtilisateur">Pseudo : </label>
@@ -12,6 +12,6 @@ echo '<div>
 <input name="mdpUtilisateur" type="password" placeholder ="Entrez votre mdp" required >';
 echo '</div>';
 echo '<div><button type="submit" value="connexion">Se connecter</button>
-<button><a href="index.php?codePage=default">Annuler</a></button>';
+<button><a href="index.php?page=default">Annuler</a></button>';
 echo'</form>';
 ?>
