@@ -102,10 +102,11 @@ img{
 }
 
 .ajouter{
-    border: 1px solid #2abe2a;
+    border: 2px solid #066606;
     border-radius: 1.2em;
     padding:0.7em 1em;
     background: var(--ajouter);
+    cursor:pointer;
 }
 
 .libelle{
@@ -119,24 +120,27 @@ img{
 }
 
 .details{
-    border: 1px solid #aae40c;
+    border: 2px solid #e7c60a;
     border-radius: 1.2em;
     padding:0.7em 1em;
     background: var(--detail); 
+    cursor:pointer;
 }
 
 .modifier{
-    border: 1px solid #3cd6af;
+    border: 2px solid #2a41c4;
     border-radius: 1.2em;
     padding:0.7em 1em;
     background: var(--modifier); 
+    cursor:pointer;
 }
 
 .supprimer{
-    border: 1px solid #d63c3c;
+    border: 2px solid #f10606;
     border-radius: 1.2em;
     padding:0.7em 1em;
     background: var(--supprimer); 
+    cursor:pointer;
 }
 
 .return{
