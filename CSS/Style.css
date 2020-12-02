@@ -73,7 +73,7 @@ img{
 
 .centre{
     justify-content: center;
-    text-align: center;
+    align-items: center;
 }
 
 .espace{
