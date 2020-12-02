@@ -5,7 +5,7 @@ $produits = ProduitsManager::getList();
 echo '<div class="contenu colonne">
     <div class="margin">
         <div class="espace"></div>
-        <div class="ajouter"><a class="centre size" href="index.php?page=formulaireProduits&typeFormulaire=ajouter>Ajouter un Produit</a></div>
+        <div class="ajouter"><a class="centre size" href="index.php?page=formulaireProduits&typeFormulaire=ajouter">Ajouter un Produit</a></div>
         <div class="espace"></div>
     </div>';
     foreach ($produits as $unProduits)
