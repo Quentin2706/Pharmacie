@@ -153,3 +153,42 @@ img{
     text-shadow:0px 1px 0px #2b665e;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.ajout {
+    background-color: chartreuse;
+    font-size: 1.2em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding: 0.3em 3em;
+}
+
+.detail {
+    background-color: rgb(230, 189, 7);
+    font-size: 1.2em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding: 0.3em 1.5em;
+    margin: 0 1em;
+}
+
+.modif {
+    background-color: turquoise;
+    font-size: 1.2em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding: 0.3em 1.5em;
+    margin: 0 1em;
+}
+
+.suppr {
+    background-color: red;
+    font-size: 1.2em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding: 0.3em 1.5em;
+    margin: 0 1em;
+}
