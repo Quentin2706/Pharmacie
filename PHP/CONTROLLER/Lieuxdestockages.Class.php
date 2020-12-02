@@ -18,7 +18,7 @@ class Lieuxdestockages
 		return $this->_idLieuxDeStockage;
 	}
 
-	public function setIdLieuxDeStockage($idLieuxDeStockage)
+	public function setIdLieuxDeStockage(int $idLieuxDeStockage)
 	{
 		$this->_idLieuxDeStockage=$idLieuxDeStockage;
 	}

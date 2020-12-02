@@ -19,7 +19,7 @@ class Commandes
 		return $this->_idCommande;
 	}
 
-	public function setIdCommande($idCommande)
+	public function setIdCommande(int $idCommande)
 	{
 		$this->_idCommande=$idCommande;
 	}
@@ -49,7 +49,7 @@ class Commandes
 		return $this->_idProduit;
 	}
 
-	public function setIdProduit($idProduit)
+	public function setIdProduit(int $idProduit)
 	{
 		$this->_idProduit=$idProduit;
 	}
@@ -59,7 +59,7 @@ class Commandes
 		return $this->_idUser;
 	}
 
-	public function setIdUser($idUser)
+	public function setIdUser(int $idUser)
 	{
 		$this->_idUser=$idUser;
 	}

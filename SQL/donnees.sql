@@ -5,6 +5,7 @@ INSERT INTO `categories`(`idCategorie`, `nomCategorie`, `ordonnanceCategorie`) V
 INSERT INTO `categories`(`idCategorie`, `nomCategorie`, `ordonnanceCategorie`) VALUES (NULL,"Cardiologie","Oui");
 INSERT INTO `categories`(`idCategorie`, `nomCategorie`, `ordonnanceCategorie`) VALUES (NULL,"Anti-inflammatoire","Non");
 
+INSERT INTO `roles`(`idRole`, `nomRole`) VALUES (NULL,"Inconnu");
 INSERT INTO `roles`(`idRole`, `nomRole`) VALUES (NULL,"Admin");
 INSERT INTO `roles`(`idRole`, `nomRole`) VALUES (NULL,"User");
 
@@ -25,11 +26,11 @@ INSERT INTO `lieuxdestockages`(`idLieuxDeStockage`, `libelleLieuxDeStockage`, `R
 INSERT INTO `lieuxdestockages`(`idLieuxDeStockage`, `libelleLieuxDeStockage`, `Rayon`, `Etagere`) VALUES (NULL,"Zone commerciale","Rayon 3",2);
 INSERT INTO `lieuxdestockages`(`idLieuxDeStockage`, `libelleLieuxDeStockage`, `Rayon`, `Etagere`) VALUES (NULL,"Zone commerciale","Rayon 3",3);
 
-INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Rodriguez","Alberto",35,1);
-INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Dupont","Toto",25,2);
-INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Dupont","Titi",25,2);
-INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Dupont","Tata",25,2);
-INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Rodriguez","Albertine",35,1);
+INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Rodriguez","Alberto",35,2);
+INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Dupont","Toto",25,3);
+INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Dupont","Titi",25,3);
+INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Dupont","Tata",25,3);
+INSERT INTO `users`(`idUser`, `nomUser`, `prenomUser`, `ageUser`, `idRole`) VALUES (NULL,"Rodriguez","Albertine",35,2);
                                                                                                                                                                                                            -- NOM    -- DESC      --RESTIC   --PEREMP  --PRIX    -QUANTITE  --IDCAT    --IDSTOCK                                                                               
 INSERT INTO `produits`(`idProduit`, `nomProduit`, `descriptionProduit`, `restrictionProduit`, `datePeremptionProduit`, `prixProduit`, `QuantiteProduit`, `idCategorie`, `idLieuxDeStockage`) VALUES (NULL,"Doliprane","Doliprane","aucune","2020-12-30",6,2500,4,8);
 INSERT INTO `produits`(`idProduit`, `nomProduit`, `descriptionProduit`, `restrictionProduit`, `datePeremptionProduit`, `prixProduit`, `QuantiteProduit`, `idCategorie`, `idLieuxDeStockage`) VALUES (NULL,"Gaviscon","desc","pas avant de dormir","2022-02-02",12,633,6,10);

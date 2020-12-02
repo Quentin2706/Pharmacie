@@ -4,7 +4,7 @@ $mode = $_GET['mode'];
 switch ($mode){
 case "ajouter" :
     {
-        echo '<form action="index.php?page=actionRoles&mode=ajouter" method="POST">';
+        echo '<form action="index.php?page=ActionRoles&mode=ajouter" method="POST">';
 
         break;
     }
@@ -15,12 +15,12 @@ case "details" :
     }
 case "modifier" :
     {
-        echo '<form action="index.php?page=actionRoles&mode=modifGenre" method="POST">';
+        echo '<form action="index.php?page=ActionRoles&mode=modifier" method="POST">';
     break;
     }
 case "supprimer" :
     {
-        echo '<form action="index.php?page=actionRoles&mode=delGenre" method="POST">';
+        echo '<form action="index.php?page=ActionRoles&mode=supprimer" method="POST">';
     break;
     }
 }
@@ -48,12 +48,12 @@ $choix = RolesManager::findById($_GET['id']);
 			}
 		case "modifier":
 			{
-                echo '<div><button type="submit" value="Modifier">Modifier</button>'; 
+                echo '<div><button class="libelle" type="submit" value="Modifier">Modifier</button>'; 
                 break;
 			}
 		case "supprimer":
 			{
-                echo '<div><button type="submit" value="Supprimer">Effacer</button>';
+                echo '<div><button class="libelle" type="submit" value="Supprimer">Effacer</button>';
                 break;
 			}
         
