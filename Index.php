@@ -21,12 +21,22 @@ $lang=isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
 
 $routes=[
 	"default"=>["PHP/VIEW/","Accueil","Accueil"],
-	"TestcategoriesManager"=>["PHP/MODEL/TESTMANAGER/","TestcategoriesManager","Test de categories"],
-	"TestcommandesManager"=>["PHP/MODEL/TESTMANAGER/","TestcommandesManager","Test de commandes"],
-	"TestlieuxdestockagesManager"=>["PHP/MODEL/TESTMANAGER/","TestlieuxdestockagesManager","Test de lieuxdestockages"],
-	"TestproduitsManager"=>["PHP/MODEL/TESTMANAGER/","TestproduitsManager","Test de produits"],
-	"TestrolesManager"=>["PHP/MODEL/TESTMANAGER/","TestrolesManager","Test de roles"],
-	"TestusersManager"=>["PHP/MODEL/TESTMANAGER/","TestusersManager","Test de users"],
+	// "TestcategoriesManager"=>["PHP/MODEL/TESTMANAGER/","TestcategoriesManager","Test de categories"],
+	// "TestcommandesManager"=>["PHP/MODEL/TESTMANAGER/","TestcommandesManager","Test de commandes"],
+	// "TestlieuxdestockagesManager"=>["PHP/MODEL/TESTMANAGER/","TestlieuxdestockagesManager","Test de lieuxdestockages"],
+	// "TestproduitsManager"=>["PHP/MODEL/TESTMANAGER/","TestproduitsManager","Test de produits"],
+	// "TestrolesManager"=>["PHP/MODEL/TESTMANAGER/","TestrolesManager","Test de roles"],
+	// "TestusersManager"=>["PHP/MODEL/TESTMANAGER/","TestusersManager","Test de users"],
+	"ListeProduits"=>["PHP/MODEL/","ListeProduits","Liste des Produits"],
+	"FormulaireProduits"=>["PHP/MODEL/","FormulaireProduits","formulaire des produits"],
+	"ListeUsers"=>["PHP/MODEL/","ListeUsers","Liste des Users"],
+	"FormulaireUsers"=>["PHP/MODEL/","FormulaireUsers","formulaire des users"],
+	"ListeRoles"=>["PHP/MODEL/","ListeRoles","Liste des roles"],
+	"FormulaireRoles"=>["PHP/MODEL/","FormulaireRoles","formulaire des roles"],
+	"ListeCategories"=>["PHP/MODEL/","ListeCategories","Liste des Categories"],
+	"FormulaireCategories"=>["PHP/MODEL/","FormulaireCategories","formulaire des categories"],
+	"ListeCommandes"=>["PHP/MODEL/","ListeCommandes","Liste des Commandes"],
+	"FormulaireCommandes"=>["PHP/MODEL/","FormulaireCommandes","formulaire des commandes"],
 ];
 
 if(isset($_GET["page"]))
