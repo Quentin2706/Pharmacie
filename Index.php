@@ -37,6 +37,9 @@ $routes=[
 	"FormulaireCategories"=>["PHP/VIEW/","FormulaireCategories","formulaire des categories"],
 	"ListeCommandes"=>["PHP/VIEW/","ListeCommandes","Liste des Commandes"],
 	"FormulaireCommandes"=>["PHP/VIEW/","FormulaireCommandes","formulaire des commandes"],
+
+	"ListeLieuxdeStockages"=>["PHP/VIEW/","ListeLieuxdeStockages","Liste des lieux de stockage"],
+	"FormulaireLieuxdeStockages"=>["PHP/VIEW/","FormulaireLieuxDeStockages","formulaire des produits"],
 ];
 
 if(isset($_GET["page"]))

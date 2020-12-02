@@ -125,6 +125,7 @@ img{
     padding:0.7em 1em;
     background: var(--detail); 
     cursor:pointer;
+    align-items: center;
 }
 
 .modifier{
@@ -133,6 +134,7 @@ img{
     padding:0.7em 1em;
     background: var(--modifier); 
     cursor:pointer;
+    align-items: center;
 }
 
 .supprimer{
@@ -141,6 +143,7 @@ img{
     padding:0.7em 1em;
     background: var(--supprimer); 
     cursor:pointer;
+    align-items: center;
 }
 
 .return{
