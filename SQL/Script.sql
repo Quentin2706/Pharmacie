@@ -72,7 +72,7 @@ CREATE TABLE Produits(
 #------------------------------------------------------------
 DROP TABLE if exists Commandes;
 CREATE TABLE Commandes(
-        idCommande Int NOT NULL PRIMARY KEY ,
+        idCommande Int Auto_increment NOT NULL PRIMARY KEY ,
         dateCommande  Date NOT NULL ,
         dateReception Date NOT NULL ,
         idProduit     Int NOT NULL ,
