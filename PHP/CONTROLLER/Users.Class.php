@@ -19,7 +19,7 @@ class Users
 		return $this->_idUser;
 	}
 
-	public function setIdUser($idUser)
+	public function setIdUser(int $idUser)
 	{
 		$this->_idUser=$idUser;
 	}
@@ -49,7 +49,7 @@ class Users
 		return $this->_ageUser;
 	}
 
-	public function setAgeUser($ageUser)
+	public function setAgeUser(int $ageUser)
 	{
 		$this->_ageUser=$ageUser;
 	}
@@ -59,7 +59,7 @@ class Users
 		return $this->_idRole;
 	}
 
-	public function setIdRole($idRole)
+	public function setIdRole(int $idRole)
 	{
 		$this->_idRole=$idRole;
 	}

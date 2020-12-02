@@ -2,6 +2,11 @@
 $roles = RolesManager::getList();
 
 echo '<div class="contenu colonne">
+<div>
+<div class="espace"></div>
+<div class="size centre titre">Liste des roles</div>
+<div class="espace"></div>
+</div>
     <div class="margin">
         <div class="espace"></div>
         <div class="ajouter"><a class="centre size" href="index.php?page=FormulaireRoles&choix=roles&mode=ajouter">Ajouter un Role</a></div>

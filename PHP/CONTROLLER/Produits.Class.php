@@ -23,7 +23,7 @@ class Produits
 		return $this->_idProduit;
 	}
 
-	public function setIdProduit($idProduit)
+	public function setIdProduit(int $idProduit)
 	{
 		$this->_idProduit=$idProduit;
 	}
@@ -73,7 +73,7 @@ class Produits
 		return $this->_prixProduit;
 	}
 
-	public function setPrixProduit($prixProduit)
+	public function setPrixProduit(float $prixProduit)
 	{
 		$this->_prixProduit=$prixProduit;
 	}
@@ -83,7 +83,7 @@ class Produits
 		return $this->_QuantiteProduit;
 	}
 
-	public function setQuantiteProduit($QuantiteProduit)
+	public function setQuantiteProduit(int $QuantiteProduit)
 	{
 		$this->_QuantiteProduit=$QuantiteProduit;
 	}
@@ -93,7 +93,7 @@ class Produits
 		return $this->_idCategorie;
 	}
 
-	public function setIdCategorie($idCategorie)
+	public function setIdCategorie(int $idCategorie)
 	{
 		$this->_idCategorie=$idCategorie;
 	}
@@ -103,7 +103,7 @@ class Produits
 		return $this->_idLieuxDeStockage;
 	}
 
-	public function setIdLieuxDeStockage($idLieuxDeStockage)
+	public function setIdLieuxDeStockage(int $idLieuxDeStockage)
 	{
 		$this->_idLieuxDeStockage=$idLieuxDeStockage;
 	}

@@ -58,4 +58,20 @@ class UsersManager
 		}
 		return $liste;
 	}
+
+	public static function findByRole($id)
+	{
+ 		$db=DbConnect::getDb();
+		$id = (int) $id;
+		$q=$db->query("SELECT * FROM Users WHERE idRole =".$id);
+		$results = $q->fetch(PDO::FETCH_ASSOC);
+		if($results != false)
+		{
+			return new Users($results);
+		}
+		else
+		{
+			return false;
+		}
+	}
 }

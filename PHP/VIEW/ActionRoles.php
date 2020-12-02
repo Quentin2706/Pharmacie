@@ -1,24 +1,25 @@
 <?php
-switch ($mode){
-case "ajouter" :
-    {
-        $obj = new Roles($_POST);
-        RolesManager::add($obj);
-        break;
-    }
-case "details" :
-    {
+$mode = $_GET['mode'];
+$obj = new Roles($_POST);
 
-        break;
-    }
-case "modifier" :
-    {
-
-    break;
-    }
-case "supprimer" :
-    {
-
-    break;
-    }
+switch ($mode) {
+    case "ajouter":
+        {
+            RolesManager::add($obj);
+            break;
+        }
+    case "modifier":
+        {
+            RolesManager::update($obj);
+            break;
+        }
+    case "supprimer":
+        {
+            
+            $id = $obj->getIdRole();
+            var_dump($id);
+            $obj = UsersManager::findByRole($id);
+            var_dump($obj);
+            break;
+        }
 }
