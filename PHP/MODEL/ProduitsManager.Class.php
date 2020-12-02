@@ -5,7 +5,7 @@ class ProduitsManager
 	public static function add(Produits $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO Produits (nomProduit,descriptionProduit,restrictionProduit,datePeremptionProduit,prixProduit,QuantiteProduit,idCategorie,idLieuxDeStockage) VALUES (:nomProduit,:descriptionProduit,:restrictionProduit,:datePeremptionProduit,:prixProduit,:QuantiteProduit,:idCategorie,:idLieuxDeStockage)");
+		$q=$db->prepare("INSERT INTO produits (nomProduit,descriptionProduit,restrictionProduit,datePeremptionProduit,prixProduit,QuantiteProduit,idCategorie,idLieuxDeStockage) VALUES (:nomProduit,:descriptionProduit,:restrictionProduit,:datePeremptionProduit,:prixProduit,:QuantiteProduit,:idCategorie,:idLieuxDeStockage)");
 		$q->bindValue(":nomProduit", $obj->getNomProduit());
 		$q->bindValue(":descriptionProduit", $obj->getDescriptionProduit());
 		$q->bindValue(":restrictionProduit", $obj->getRestrictionProduit());
@@ -20,7 +20,7 @@ class ProduitsManager
 	public static function update(Produits $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE Produits SET idProduit=:idProduit,nomProduit=:nomProduit,descriptionProduit=:descriptionProduit,restrictionProduit=:restrictionProduit,datePeremptionProduit=:datePeremptionProduit,prixProduit=:prixProduit,QuantiteProduit=:QuantiteProduit,idCategorie=:idCategorie,idLieuxDeStockage=:idLieuxDeStockage WHERE idProduit=:idProduit");
+		$q=$db->prepare("UPDATE produits SET idProduit=:idProduit,nomProduit=:nomProduit,descriptionProduit=:descriptionProduit,restrictionProduit=:restrictionProduit,datePeremptionProduit=:datePeremptionProduit,prixProduit=:prixProduit,QuantiteProduit=:QuantiteProduit,idCategorie=:idCategorie,idLieuxDeStockage=:idLieuxDeStockage WHERE idProduit=:idProduit");
 		$q->bindValue(":idProduit", $obj->getIdProduit());
 		$q->bindValue(":nomProduit", $obj->getNomProduit());
 		$q->bindValue(":descriptionProduit", $obj->getDescriptionProduit());
@@ -35,13 +35,13 @@ class ProduitsManager
 	public static function delete(Produits $obj)
 	{
  		$db=DbConnect::getDb();
-		$db->exec("DELETE FROM Produits WHERE idProduit=" .$obj->getIdProduit());
+		$db->exec("DELETE FROM produits WHERE idProduit=" .$obj->getIdProduit());
 	}
 	public static function findById($id)
 	{
  		$db=DbConnect::getDb();
 		$id = (int) $id;
-		$q=$db->query("SELECT * FROM Produits WHERE idProduit =".$id);
+		$q=$db->query("SELECT * FROM produits WHERE idProduit =".$id);
 		$results = $q->fetch(PDO::FETCH_ASSOC);
 		if($results != false)
 		{
@@ -56,7 +56,7 @@ class ProduitsManager
 	{
  		$db=DbConnect::getDb();
 		$liste = [];
-		$q = $db->query("SELECT * FROM Produits");
+		$q = $db->query("SELECT * FROM produits");
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
 			if($donnees != false)
