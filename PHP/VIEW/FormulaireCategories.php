@@ -39,30 +39,37 @@ $choix = CategoriesManager::findById($_GET['id']);
 <input name="ordonnanceCategorie" <?php if($mode!="ajouter"){echo'value="'.$choix->getOrdonnanceCategorie().'"';} else{echo'placeholder="ordonnance catégorie"';}if($mode=="supprimer"|| $mode=="afficher")echo'disabled';?>>
 
 <?php
-
-switch($mode)
+switch ($mode)
 {
     case "ajouter":
-    {
-        echo'<button type="submit">Ajouter</button>';
-        break;        
-    }
-    case "afficher":
-    {
-        echo'<button type="submit">Afficher</button>';
-        break;        
-    }
+        {
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
+            break;
+        }
     case "modifier":
-    {
-        echo'<button type="submit">Modifier</button>';
-        break;
-    }
+        {
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
+            break;
+        }
     case "supprimer":
+        {
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
+            break;
+        }
+    
+    default:
     {
-        echo'<button type="submit">Supprimer</button>';
-        break;
+        echo '<div>';
     }
 }
-echo'<button type="reset"><a href="index.php?page=default">Annuler</a></button>';
+// dans tous les cas, on met le bouton annuler
 ?>
+
+</div>
+<div>
+<div class="espace"></div>
+<div class="return"><a class="centre size" href="index.php?page=ListeCategories">Retour</a></div>
+<div class="espace"></div>
+</div>
+
 </form>

@@ -101,43 +101,37 @@ if ($mode == "supprimer" || $mode == "details") {
 
 </div> -->
 <?php
-switch ($mode) {
-    case "ajouter":{
-            echo '
-        <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=ListeLieuxdeStockages">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter" />
-        </div>';
-            break;
-        }
-    case "modifier":{
-
-            echo '
-        <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=ListeLieuxdeStockages">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier" />
-        </div>';
-            break;
-        }
-    case "supprimer":{
-            echo '
-        <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=ListeLieuxdeStockages">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="supprimer" />
-        </div>';
-            break;
-        }
-    default:
+switch ($mode)
+{
+    case "ajouter":
         {
-            echo '
-        <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=ListeLieuxdeStockages">Retour</a></div>
-
-        </div>';
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
+            break;
         }
+    case "modifier":
+        {
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
+            break;
+        }
+    case "supprimer":
+        {
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
+            break;
+        }
+    
+    default:
+    {
+        echo '<div>';
+    }
 }
-
+// dans tous les cas, on met le bouton annuler
 ?>
 
+</div>
+<div>
+<div class="espace"></div>
+<div class="return"><a class="centre size" href="index.php?page=ListeLieuxdeStockages">Retour</a></div>
+<div class="espace"></div>
+</div>
 
 </form>

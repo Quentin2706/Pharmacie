@@ -49,23 +49,25 @@ INSERT INTO `commandes`(`idCommande`, `dateCommande`, `dateReception`, `idProdui
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Header","FR","Bienvenue sur le site de la Pharmacie");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Header","EN","Welcome to the Pharmacy website");
 
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Produits","FR","Les Produits");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Lieux de Stockage","FR","Les Lieux de Stockage");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Users","FR","Les Users");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Roles","FR","Les Roles");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Categories","FR","Les Categories");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Commandes","FR","Les Commandes");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Inscriptions","FR","Inscriptions");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Connexions","FR","Connexions");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnproduitnav","FR","Les Produits");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnstocknav","FR","Les Lieux de Stockage");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnusernav","FR","Les Users");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnrolenav","FR","Les Roles");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btncatnav","FR","Les Categories");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btncommandenav","FR","Les Commandes");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btninscnav","FR","Inscription");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnconnectnav","FR","Connexion");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btndeconnectnav","FR","Deconnexion");
 
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Produits","EN","Products");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Lieux de Stockage","EN","Storage places");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Users","EN","Users");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte)VALUES(NULL,"Les Roles","EN","Roles");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Categories","EN","Categories");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Les Commandes","EN","Orders");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Inscriptions","EN","registration");
-INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Connexions","EN","connection");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnproduitnav","EN","Products");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnstocknav","EN","Storage places");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnusernav","EN","Users");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte)VALUES(NULL,"btnrolenav","EN","Roles");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btncatnav","EN","Categories");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btncommandenav","EN","Orders");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btninscnav","EN","registration");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btnconnectnav","EN","connection");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"btndeconnectnav","EN","Deconnexion");
 
 
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Contact","FR","Contact");

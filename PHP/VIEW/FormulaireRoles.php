@@ -40,31 +40,37 @@ $choix = RolesManager::findById($_GET['id']);
     </div>
     </div>
     <?php
-    switch ($mode) {
-		case "ajouter":
-			{
-                echo '<div><button class="libelle" type="submit" value="Ajouter">Ajouter</button>'; 
-                break;
-			}
-		case "modifier":
-			{
-                echo '<div><button class="libelle" type="submit" value="Modifier">Modifier</button>'; 
-                break;
-			}
-		case "supprimer":
-			{
-                echo '<div><button class="libelle" type="submit" value="Supprimer">Effacer</button>';
-                break;
-			}
-        
-        default:
+switch ($mode)
+{
+    case "ajouter":
         {
-            echo '<div>';
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
+            break;
         }
+    case "modifier":
+        {
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
+            break;
+        }
+    case "supprimer":
+        {
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
+            break;
+        }
+    
+    default:
+    {
+        echo '<div>';
     }
+}
 // dans tous les cas, on met le bouton annuler
-    ?>
-    <button class="libelle" ><a href="index.php?page=listeRoles">Annuler</a></button>
+?>
+
+</div>
+<div>
+<div class="espace"></div>
+<div class="return"><a class="centre size" href="index.php?page=ListeRoles">Retour</a></div>
+<div class="espace"></div>
 </div>
 
 </form>

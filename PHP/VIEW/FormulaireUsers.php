@@ -47,7 +47,7 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="nomUser" placeholder="Nom du User" value="<?php if ($mode != "ajouter") echo $choix->getNomUser() ;?>"/>
+                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="nomUser" placeholder="Nom du User" value="<?php if ($mode != "ajouter") echo $choix->getNomUser() ;?>"/>
                  <div class="espace"></div>
              </div>
         </div>
@@ -57,7 +57,7 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="prenomUser" placeholder="Prenom du User" value="<?php if ($mode != "ajouter") echo $choix->getPrenomUser() ;?>"/>
+                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="prenomUser" placeholder="Prenom du User" value="<?php if ($mode != "ajouter") echo $choix->getPrenomUser() ;?>"/>
                 <div class="espace"></div>
             </div>
         </div>
@@ -67,7 +67,7 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="ageUser" placeholder="Age du User" value="<?php if ($mode != "ajouter") echo $choix->getAgeUser() ;?>"/>
+                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="ageUser" placeholder="Age du User" value="<?php if ($mode != "ajouter") echo $choix->getAgeUser() ;?>"/>
                 <div class="espace"></div>
             </div>
         </div>
@@ -81,12 +81,14 @@ if (isset($_GET['id']))
         foreach ( $listeRoles as $unRole )
         {
             $sel = "";
-            echo '<option value="'.$unRole->getIdRole().'"'.$sel.'>'.$unRole->getNomRole().'</option>';
+            if ($unRole->getIdRole()==$id->getIdRole()){
+                $sel="selected";
+            }
+            echo '<option value="'.$unRole->getIdRole().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unRole->getNomRole().'</option>';
         }
         ?>
 
         </select>
-        <div class="espace"></div>
     </div>
 
 
@@ -96,17 +98,17 @@ switch ($mode)
     {
 		case "ajouter":
 			{
-                echo '<input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "modifier":
 			{
-                echo '<input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "supprimer":
 			{
-                echo '<input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
                 break;
 			}
         
@@ -117,7 +119,12 @@ switch ($mode)
     }
 // dans tous les cas, on met le bouton annuler
     ?>
-    <div class="return"><a class="centre size" href="index.php?page=ListeUsers">Retour</a></div>
+    
+</div>
+<div>
+<div class="espace"></div>
+<div class="return"><a class="centre size" href="index.php?page=ListeUsers">Retour</a></div>
+<div class="espace"></div>
 </div>
 
 </form>

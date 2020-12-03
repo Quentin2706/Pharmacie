@@ -1,5 +1,5 @@
 :root{
-    --couleurHF: #6cec53;
+    --couleurHF: #20A24C;
     --body: #c6d6cf;
     --colorNav: #ee6b4b;
     --ajouter: linear-gradient(to bottom, #a2dda2 5%, #4bb42b 100%);
@@ -117,6 +117,7 @@ img{
     padding:0.7em 1em;
     text-shadow:0px 1px 0px #979e93;
     color:black;
+    flex : 5;
 }
 
 .details{
@@ -167,4 +168,8 @@ a {
 }
 .white{
     background-color: white;
+}
+
+.grosflex {
+    flex: 5;
 }
