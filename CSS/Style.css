@@ -160,3 +160,11 @@ a {
     text-decoration: none;
     color: black;
 }
+.imgaccueil{
+    margin-top: 3em;
+    border: double 9px var(--couleurHF);
+
+}
+.white{
+    background-color: white;
+}

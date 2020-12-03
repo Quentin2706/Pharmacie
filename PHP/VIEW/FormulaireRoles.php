@@ -64,7 +64,7 @@ $choix = RolesManager::findById($_GET['id']);
     }
 // dans tous les cas, on met le bouton annuler
     ?>
-    <button class="libelle" ><a href="index.php?codePage=listeRoles">Annuler</a></button>
+    <button class="libelle" ><a href="index.php?page=listeRoles">Annuler</a></button>
 </div>
 
 </form>

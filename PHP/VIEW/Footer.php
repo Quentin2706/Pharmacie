@@ -3,16 +3,18 @@
             <div class="centre">Contact</div>
         </div>
         <div class="colonne flex">
-            <div class="centre">Adresse Postal</div>
-            <div class="centre">Adresse Mail</div>
-            <div class="centre">N° Telephone</div>
-            <div class="centre">N° SIRET</div>
+            <div class="centre"><?php echo texte("Adresse Postal");?></div>
+            <div class="centre"><?php echo texte("Adresse Mail");?></div>
+            <div class="centre"><?php echo texte("N° Telephone");?></div>
+            <div class="centre"><?php echo texte("N° SIRET");?></div>
         </div>
         <div class="colonne flex">
-            <div class="centre">Reseaux</div>
+            <div class="centre"><?php echo texte("Reseaux");?></div>
         </div>
         <div class="logo">
-            <img src="./IMG/logoPharmacie.jpg" alt="logo Pharmacie">
+            <a href="index.php?page=default">
+                <img src="./IMG/logoPharmacie.jpg" alt="logo Pharmacie">
+            </a>
         </div>
     </footer>
 </body>

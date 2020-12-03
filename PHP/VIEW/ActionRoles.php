@@ -15,11 +15,14 @@ switch ($mode) {
         }
     case "supprimer":
         {
-            
-            $id = $obj->getIdRole();
-            var_dump($id);
-            $obj = UsersManager::findByRole($id);
-            var_dump($obj);
+            $listeUsers = UsersManager::getListByRole($obj);
+            foreach ($listeUsers as $unUser)
+            {
+                $unUser->setIdRole(1);
+                UsersManager::update($unUser);
+            }
+            RolesManager::delete($obj);
             break;
         }
 }
+header("location:index.php?page=ListeRoles");

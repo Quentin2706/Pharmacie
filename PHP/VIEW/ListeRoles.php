@@ -14,6 +14,8 @@ echo '<div class="contenu colonne">
     </div>';
     foreach ($roles as $unRole)
     {
+        if ($unRole->getIdRole()!=1)
+        {
         echo '<div class="liste">
             <div class="libelle centre marginBouton size">'.$unRole->getNomRole().'</div>
             <div class="details centre marginBouton"><a class="centre size" href="index.php?page=FormulaireRoles&choix=roles&mode=details&id='.$unRole->getIdRole().'">Details</a></div>
@@ -22,6 +24,7 @@ echo '<div class="contenu colonne">
         </div>
         <div class="margin">
         </div>';
+        }
     }
 echo '</div>
     <div>

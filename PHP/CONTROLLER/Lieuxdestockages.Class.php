@@ -48,7 +48,7 @@ class Lieuxdestockages
 		return $this->_Etagere;
 	}
 
-	public function setEtagere($Etagere)
+	public function setEtagere(int $Etagere)
 	{
 		$this->_Etagere=$Etagere;
 	}

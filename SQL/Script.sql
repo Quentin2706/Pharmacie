@@ -23,6 +23,8 @@ CREATE TABLE Users(
         nomUser      Varchar (100) NOT NULL ,
         prenomUser   Varchar (100) NOT NULL ,
         ageUser      Int NOT NULL ,
+        pseudoUser   Varchar (50) NOT NULL ,
+        motDePasseUser Varchar(50) NOT NULL ,
         idRole       Int NOT NULL 
 )ENGINE=InnoDB;
 
@@ -77,6 +79,17 @@ CREATE TABLE Commandes(
         dateReception Date NOT NULL ,
         idProduit     Int NOT NULL ,
         idUser        Int NOT NULL 
+)ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: Texte
+#------------------------------------------------------------
+DROP TABLE if exists Texte;
+CREATE TABLE Texte(
+        idTexte int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        codeTexte varchar(1118) NOT NULL,
+        codeLangue varchar(1118) NOT NULL,
+        Texte text NOT NULL
 )ENGINE=InnoDB;
 
 

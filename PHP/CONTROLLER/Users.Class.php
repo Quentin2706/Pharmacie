@@ -9,6 +9,8 @@ class Users
 	private $_nomUser;
 	private $_prenomUser;
 	private $_ageUser;
+	private $_pseudoUser;
+	private $_motDePasseUser;
 	private $_idRole;
 
 	/***************** Accesseurs ***************** */
@@ -52,6 +54,26 @@ class Users
 	public function setAgeUser(int $ageUser)
 	{
 		$this->_ageUser=$ageUser;
+	}
+
+	public function getPseudoUser()
+	{
+		return $this->_pseudoUser;
+	}
+
+	public function setPseudoUser($pseudoUser)
+	{
+		$this->_pseudoUser = $pseudoUser;
+	}
+
+	public function getMotDePasseUser()
+	{
+		return $this->_motDePasseUser;
+	}
+
+	public function setMotDePasseUser($motDePasseUser)
+	{
+		$this->_motDePasseUser = $motDePasseUser;
 	}
 
 	public function getIdRole()

@@ -58,4 +58,20 @@ class CommandesManager
 		}
 		return $liste;
 	}
+
+	public static function getListByProduit(produits $produits)
+	{
+		$id=(int) $produits->getIdProduit();
+ 		$db=DbConnect::getDb();
+		$liste = [];
+		$q = $db->query("SELECT * FROM Commandes WHERE idProduit=$id");
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			if($donnees != false)
+			{
+				$liste[] = new Commandes($donnees);
+			}
+		}
+		return $liste;
+	}
 }
