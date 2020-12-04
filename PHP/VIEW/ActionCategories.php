@@ -27,3 +27,4 @@ switch($mode){
         break;
     }
 }
+header("location:index.php?page=ListeCategories");

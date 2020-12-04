@@ -26,4 +26,4 @@ switch ($mode) {
             break;
         }
 }
-// header("location:index.php?page=ListeCommandes");
+header("location:index.php?page=ListeCommandes");
