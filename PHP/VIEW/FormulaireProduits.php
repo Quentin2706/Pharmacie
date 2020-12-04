@@ -116,11 +116,11 @@ if (isset($_GET['id']))
             foreach ( $listeCategories as $uneCategorie )
             {
                 $sel = "";
-                if ($uneCategorie->getIdCategorie()==$id->getIdCategorie())
+                if ($uneCategorie->getIdCategorie()==$choix->getIdCategorie())
                 {
                     $sel="selected";
                 }
-                echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getNomCategorie().'</option>';
+                echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$uneCategorie->getNomCategorie().'</option>';
             }
             ?>
 
@@ -141,11 +141,11 @@ if (isset($_GET['id']))
             foreach ( $listeLieuxDeStockage as $unLieuxDeStockage )
             {
                 $sel = "";
-                if ($unLieuxDeStockage->getIdLieuxDeStockage()==$id->getIdLieuxDeStockage())
+                if ($unLieuxDeStockage->getIdLieuxDeStockage()==$choix->getIdLieuxDeStockage())
                 {
                     $sel="selected";
                 }
-                echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel.'>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
+                echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
             }
             ?> 
 

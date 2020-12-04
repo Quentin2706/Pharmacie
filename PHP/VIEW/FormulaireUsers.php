@@ -81,7 +81,7 @@ if (isset($_GET['id']))
         foreach ( $listeRoles as $unRole )
         {
             $sel = "";
-            if ($unRole->getIdRole()==$id->getIdRole()){
+            if ($unRole->getIdRole()==$choix->getIdRole()){
                 $sel="selected";
             }
             echo '<option value="'.$unRole->getIdRole().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unRole->getNomRole().'</option>';
@@ -89,6 +89,7 @@ if (isset($_GET['id']))
         ?>
 
         </select>
+        <div class="espace"></div>
     </div>
 
 
