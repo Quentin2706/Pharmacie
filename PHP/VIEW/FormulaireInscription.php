@@ -82,12 +82,12 @@ $listeRole = RolesManager::getList();
 </div>
 <div>
             <div class="espace"></div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=listeProduits">Retour</a></div>
+            <div class="return marginLight"><a class="centre" href="index.php?page=listeProduits"><?php echo texte("Retour");?></a></div>
             <div class="espace"></div>
         </div>
 <div>
 <div class="espace"></div>
-<input type="submit" class="ajouter size marginLight centre" name="submit" value="Inscrire"/>
+<input type="submit" class="ajouter size marginLight centre" name="submit" value="<?php echo texte("Inscrire");?>"/>
 <div class="espace"></div>
 </div>
 </form>
