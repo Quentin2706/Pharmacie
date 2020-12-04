@@ -29,7 +29,6 @@ case "supprimer" :
     break;
     }
 }
-var_dump($_GET['id']);
 if (isset($_GET['id']))
 {
 $choix = CommandesManager::findById($_GET['id']);

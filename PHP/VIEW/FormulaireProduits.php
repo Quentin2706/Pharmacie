@@ -104,44 +104,55 @@ if (isset($_GET['id']))
         </div>
     </div>
     
-    <div>
-    <div class="espace"></div>
-        <select class="libelle marginLight" name="IdCategorie">
+    <div class="colonne marginLight">
+        <div class="titreDescriptif centre">
+            Categories
+        </div>
+        <div>
+            <div class="espace"></div>
+            <select class="libelle marginLight" name="IdCategorie">
 
-        <?php 
-        foreach ( $listeCategories as $uneCategorie )
-        {
-            $sel = "";
-            if ($uneCategorie->getIdCategorie()==$id->getIdCategorie()){
-                $sel="selected";
+            <?php 
+            foreach ( $listeCategories as $uneCategorie )
+            {
+                $sel = "";
+                if ($uneCategorie->getIdCategorie()==$id->getIdCategorie())
+                {
+                    $sel="selected";
+                }
+                echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getNomCategorie().'</option>';
             }
-            echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getNomCategorie().'</option>';
-        }
-        ?>
+            ?>
 
-        </select>
-        <div class="espace"></div>
+            </select>
+            <div class="espace"></div>
+        </div>
     </div>
 
-    <div>
-    <div class="espace"></div>
-        <select class="libelle marginLight" name="idLieuxDeStockage">';
+    <div class="colonne marginLight">
+        <div class="titreDescriptif centre">
+            Lieux de Stockage
+        </div>
+        <div>
+            <div class="espace"></div>
+            <select class="libelle marginLight" name="idLieuxDeStockage">';
 
-        <?php
-        foreach ( $listeLieuxDeStockage as $unLieuxDeStockage )
-        {
-            $sel = "";
-            if ($unLieuxDeStockage->getIdLieuxDeStockage()==$id->getIdLieuxDeStockage()){
-                $sel="selected";
+            <?php
+            foreach ( $listeLieuxDeStockage as $unLieuxDeStockage )
+            {
+                $sel = "";
+                if ($unLieuxDeStockage->getIdLieuxDeStockage()==$id->getIdLieuxDeStockage())
+                {
+                    $sel="selected";
+                }
+                echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel.'>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
             }
-            echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel.'>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
-        }
-        ?>
+            ?> 
 
-        </select>
-        <div class="espace"></div>
+            </select>
+            <div class="espace"></div>
+        </div>
     </div>
-
 
 <?php
 
