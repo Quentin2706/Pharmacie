@@ -113,13 +113,17 @@ if (isset($_GET['id']))
             <select class="libelle marginLight" name="IdCategorie">
 
             <?php 
+
             foreach ( $listeCategories as $uneCategorie )
             {
+                if ($mode != "ajouter")
+                {
                 $sel = "";
                 if ($uneCategorie->getIdCategorie()==$choix->getIdCategorie())
                 {
                     $sel="selected";
                 }
+            }
                 echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$uneCategorie->getNomCategorie().'</option>';
             }
             ?>
@@ -140,11 +144,14 @@ if (isset($_GET['id']))
             <?php
             foreach ( $listeLieuxDeStockage as $unLieuxDeStockage )
             {
+                if ($mode != "ajouter")
+                {
                 $sel = "";
                 if ($unLieuxDeStockage->getIdLieuxDeStockage()==$choix->getIdLieuxDeStockage())
                 {
                     $sel="selected";
                 }
+            }
                 echo '<option value="'.$unLieuxDeStockage->getIdLieuxDeStockage().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unLieuxDeStockage->getLibelleLieuxDeStockage().'</option>';      
             }
             ?> 

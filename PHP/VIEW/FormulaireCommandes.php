@@ -54,10 +54,13 @@ $choix = CommandesManager::findById($_GET['id']);
         <?php 
         foreach ( $listeProduits as $unProduit )
         {
+            if ($mode != "ajouter")
+                {
             $sel = "";
             if ($unProduit->getIdProduit()==$choix->getIdProduit()){
                 $sel="selected";
             }
+        }
             echo '<option value="'.$unProduit->getIdProduit().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unProduit->getNomProduit().'</option>';
         }
         ?>
@@ -72,10 +75,13 @@ $choix = CommandesManager::findById($_GET['id']);
         <?php 
         foreach ( $listeUsers as $unUser )
         {
+            if ($mode != "ajouter")
+                { 
             $sel = "";
             if ($unUser->getIdUser()==$choix->getIdUser()){
                 $sel="selected";
             }
+        }
             echo '<option value="'.$unUser->getIdUser().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unUser->getNomUser().' '.$unUser->getPrenomUser().' </option>';
         }
         ?>

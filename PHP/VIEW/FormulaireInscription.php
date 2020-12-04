@@ -61,7 +61,6 @@ $listeRole = RolesManager::getList();
         <?php
             foreach ( $listeRole as $unRole )
             {
-                $sel = "";
                 echo '<option value="'.$unRole->getIdRole().'"'.$sel.'>'.$unRole->getNomRole().'</option>';      
             }
         ?>
