@@ -14,7 +14,7 @@ echo '<div class="contenu colonne">
     </div>';
     foreach ($Commandes as $uneCommande)
     {
-        if ($elt->getIdCommande()!=1)
+        if ($uneCommande->getIdCommande()!=1)
         {
             echo '<div class="liste">
             <div class="espace"></div>

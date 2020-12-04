@@ -13,7 +13,7 @@ echo'<div class="espace"></div>
     </div>';
     foreach ($users as $unUser) 
     {
-        if ($unRole->getIdRole() != 1) 
+        if ($unUser->getIdUser() != 1) 
         {
             echo '<div class="liste marginLight">
             <div class="espace"></div>
