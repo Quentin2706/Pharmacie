@@ -1,6 +1,11 @@
 <?php
 
 echo '<div class="contenu colonne">
+<div>
+<div class="espace"></div>
+<div class="size centre titre">Liste des Lieux de Stockage</div>
+<div class="espace"></div>
+</div>
     <div class="margin">
         <div class="espace"></div>
         <div class="ajouter"><a class="centre size" href ="index.php?page=FormulaireLieuxdeStockages&mode=ajouter">Ajouter un Lieu</a></div>

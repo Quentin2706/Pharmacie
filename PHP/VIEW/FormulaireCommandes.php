@@ -47,6 +47,8 @@ $choix = CommandesManager::findById($_GET['id']);
         <input class="libelle" type="date" name="dateReception" <?php if($mode != "ajouter") echo 'value= "'.$choix->getdateReception().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
         <div class="espace"></div>
     </div>
+    <div>
+    <div class="espace"></div>
     <select class="libelle marginLight" name="idProduit">
 
         <?php 
@@ -61,6 +63,10 @@ $choix = CommandesManager::findById($_GET['id']);
         ?>
 
         </select>
+        <div class="espace"></div>
+        </div>
+        <div>
+        <div class="espace"></div>
         <select class="libelle marginLight" name="idUser">
 
         <?php 
@@ -75,6 +81,8 @@ $choix = CommandesManager::findById($_GET['id']);
         ?>
 
         </select>
+        <div class="espace"></div>
+        </div>
     </div>
     <?php
 switch ($mode)

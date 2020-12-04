@@ -3,6 +3,11 @@
 $produits = ProduitsManager::getList();
 
 echo '<div class="contenu colonne">
+<div>
+<div class="espace"></div>
+<div class="size centre titre">Liste des Produits</div>
+<div class="espace"></div>
+</div>
     <div class="margin">
         <div class="espace"></div>
         <div class="ajouter"><a class="centre size" href="index.php?page=FormulaireProduits&mode=ajouter">Ajouter un Produit</a></div>

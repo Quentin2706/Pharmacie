@@ -2,7 +2,7 @@
 if (isset($_SESSION["user"]) && $_SESSION["user"]->getIdRole() == 2) {
     $users = UsersManager::getList();
 echo'<div class="espace"></div>
-<div class="size centre titre">Liste des Commandes</div>
+<div class="size centre titre">Liste des Utilisateurs</div>
 <div class="espace"></div>
 </div>';
     echo '<div class="contenu colonne">
