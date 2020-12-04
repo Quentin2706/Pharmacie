@@ -84,6 +84,26 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"N° Teleph
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"N° SIRET","EN","SIRET N° ");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Reseaux","EN","Network");
 
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Nom","EN","First Name");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Prenom","EN","Last Name");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Mot de passe","EN","Password");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"confirmer mot de passe","EN","Repeat password");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Age","EN","Age");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Role","EN","Role");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Pseudo","EN","Nikname");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Inscrire","EN","Register");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Retour","EN","Go back");
+
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Nom","FR","Nom");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Prenom","FR","Prenom");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Mot de passe","FR","Mot de passe");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"confirmer mot de passe","FR","confirmer mot de passe");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Age","FR","Age");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Role","FR","Role");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Pseudo","FR","Pseudo");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Inscrire","FR","Inscrire");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Retour","FR","Retour");
+
 
 
 
