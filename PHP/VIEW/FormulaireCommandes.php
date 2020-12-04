@@ -29,7 +29,7 @@ case "supprimer" :
     break;
     }
 }
-var_dump($_GET['id']);
+// var_dump($_GET['id']);
 if (isset($_GET['id']))
 {
 $choix = CommandesManager::findById($_GET['id']);
@@ -39,12 +39,12 @@ $choix = CommandesManager::findById($_GET['id']);
 <?php if($mode != "ajouter") echo  '<input name= "idCommande" value="'.$choix->getIdCommande().'"type= "hidden">';?>
     <div class="colonne">
         <div>
-        <div class="centre size">Date de Commande :</div>
+        <div class="centre size"><?php echo texte("Date de Commande");?> :</div>
         <input class="libelle" type="date" name="dateCommande" <?php if($mode != "ajouter") echo 'value= "'.$choix->getdateCommande().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
         <div class="espace"></div>
     </div>
     <div>
-        <div class="centre size">Date de reception :</div>
+        <div class="centre size"><?php echo texte("Date de reception");?> :</div>
         <input class="libelle" type="date" name="dateReception" <?php if($mode != "ajouter") echo 'value= "'.$choix->getdateReception().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
         <div class="espace"></div>
     </div>
@@ -82,17 +82,17 @@ switch ($mode)
 {
     case "ajouter":
         {
-            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="'; echo texte("Ajouter");echo '"/></div><div class="espace"></div></div>';
             break;
         }
     case "modifier":
         {
-            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="'; echo texte("Modifier");echo '"/></div><div class="espace"></div></div>';
             break;
         }
     case "supprimer":
         {
-            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="'; echo texte("Supprimer");echo '"/></div><div class="espace"></div></div>';
             break;
         }
     
@@ -107,7 +107,7 @@ switch ($mode)
 </div>
 <div>
 <div class="espace"></div>
-<div class="return"><a class="centre size" href="index.php?page=ListeCommandes">Retour</a></div>
+<div class="return"><a class="centre size" href="index.php?page=ListeCommandes"><?php echo texte("Retour");?></a></div>
 <div class="espace"></div>
 </div>
 

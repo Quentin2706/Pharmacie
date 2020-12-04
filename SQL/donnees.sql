@@ -104,6 +104,22 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Pseudo","F
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Inscrire","FR","Inscrire");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Retour","FR","Retour");
 
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Ajouter une Commande","EN","Add an Order");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Ajouter une Commande","FR","Ajouter une Commande");
+
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Ajouter un Lieu","EN","Add a Place");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Details","EN","Details");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Modifier","EN","Edit");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Supprimer","EN","Delete");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Ajouter un Lieu","FR","Ajouter un Lieu");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Details","FR","Details");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Modifier","FR","Modifier");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Supprimer","FR","Supprimer");
+
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Date de Commande","EN","Date of Order");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Date de reception","EN","Reception Date");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Date de Commande","FR","Date de Commande");
+INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"Date de reception","FR","Date de reception");
 
 
 
