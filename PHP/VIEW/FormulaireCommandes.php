@@ -29,7 +29,6 @@ case "supprimer" :
     break;
     }
 }
-// var_dump($_GET['id']);
 if (isset($_GET['id']))
 {
 $choix = CommandesManager::findById($_GET['id']);
@@ -39,60 +38,74 @@ $choix = CommandesManager::findById($_GET['id']);
 <?php if($mode != "ajouter") echo  '<input name= "idCommande" value="'.$choix->getIdCommande().'"type= "hidden">';?>
     <div class="colonne">
         <div>
-        <div class="centre size"><?php echo texte("Date de Commande");?> :</div>
+        <div class="centre size">Date de Commande :</div>
         <input class="libelle" type="date" name="dateCommande" <?php if($mode != "ajouter") echo 'value= "'.$choix->getdateCommande().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
         <div class="espace"></div>
     </div>
     <div>
-        <div class="centre size"><?php echo texte("Date de reception");?> :</div>
+        <div class="centre size">Date de reception :</div>
         <input class="libelle" type="date" name="dateReception" <?php if($mode != "ajouter") echo 'value= "'.$choix->getdateReception().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
         <div class="espace"></div>
     </div>
+    <div>
+    <div class="espace"></div>
     <select class="libelle marginLight" name="idProduit">
 
         <?php 
         foreach ( $listeProduits as $unProduit )
         {
+            if ($mode != "ajouter")
+                {
             $sel = "";
-            if ($unProduit->getIdProduit()==$id->getIdProduit()){
+            if ($unProduit->getIdProduit()==$choix->getIdProduit()){
                 $sel="selected";
             }
+        }
             echo '<option value="'.$unProduit->getIdProduit().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unProduit->getNomProduit().'</option>';
         }
         ?>
 
         </select>
+        <div class="espace"></div>
+        </div>
+        <div>
+        <div class="espace"></div>
         <select class="libelle marginLight" name="idUser">
 
         <?php 
         foreach ( $listeUsers as $unUser )
         {
+            if ($mode != "ajouter")
+                { 
             $sel = "";
-            if ($unUser->getIdUser()==$id->getIdUser()){
+            if ($unUser->getIdUser()==$choix->getIdUser()){
                 $sel="selected";
             }
+        }
             echo '<option value="'.$unUser->getIdUser().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unUser->getNomUser().' '.$unUser->getPrenomUser().' </option>';
         }
         ?>
 
         </select>
+        <div class="espace"></div>
+        </div>
     </div>
     <?php
 switch ($mode)
 {
     case "ajouter":
         {
-            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="'; echo texte("Ajouter");echo '"/></div><div class="espace"></div></div>';
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
             break;
         }
     case "modifier":
         {
-            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="'; echo texte("Modifier");echo '"/></div><div class="espace"></div></div>';
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
             break;
         }
     case "supprimer":
         {
-            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="'; echo texte("Supprimer");echo '"/></div><div class="espace"></div></div>';
+            echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
             break;
         }
     
@@ -107,7 +120,7 @@ switch ($mode)
 </div>
 <div>
 <div class="espace"></div>
-<div class="return"><a class="centre size" href="index.php?page=ListeCommandes"><?php echo texte("Retour");?></a></div>
+<div class="return"><a class="centre size" href="index.php?page=ListeCommandes">Retour</a></div>
 <div class="espace"></div>
 </div>
 
